@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+body {
+    background-color: darkolivegreen;
+    font-family: League Spartan;
+    font-weight: 500;
+    color: hsl(0, 0%, 63%);
+    background: white;
+}
+
+.hidden {
+   display: none;
+}
+
+
+.active {
+    display: block;
+}
+.text-active {
+    display: flex;
+    flex-direction: column;
+}
+main {
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+/* TOP */
+
+/* UL */
+nav {
+    position: absolute;
+    top:10%;
+    left:5%;
+    width:100%;
+    z-index:3
+    
+}
+
+.navbar {
+    display: flex;
+    position: absolute;
+    left: -5%;
+    opacity: 0;
+    top: -10rem;
+    transition: opacity 200ms, top 200ms;
+    
+    z-index: 2;
+
+}
+
+.navbar-active {
+    
+    display: flex;
+        top:-3rem;
+        opacity: 1;
+        left: -5%;
+        position: absolute;
+        
+        
+        background-color: white;
+        width: 100%;
+        padding: 1rem;
+        height: 5rem;
+        
+        justify-content: space-around;
+        align-items: center;
+        color: black;
+        
+    
+    
+    
+    li {
+        list-style-type: none;
+        letter-spacing: 0.2rem;
+        position: relative;
+        
+        
+    }
+    transition: opacity 200ms, top 600ms ;
+    
+   
+    
+}
+li,a, .button-image-container {
+    
+        cursor: pointer;
+        transition: transform 200ms;
+        
+}
+li:hover, a:hover, .button-image-container:hover {
+    transform: scale(1.1, 1.1);
+}
+
+a:hover {
+    color: white;
+}
+a::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    width: 0%;
+    height: 2px;
+    background-color: rgb(0, 0, 0);
+    transition: width 0.5s;
+}
+a:hover::before {
+    width: 100%;
+}
+
+
+
+
+
+.burger {
+    min-width: 5%;
+}
+/* continue */
+.buttons {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    
+    right: 0%;
+    transform:translateX(-300%) 
+    
+}
+.button-image-container {
+    background-color: black;
+    display: grid;
+    place-content: center;
+    min-width:200%;
+    aspect-ratio: 1 / 1;
+}
+.logo {
+    position: absolute;
+    top:10%;
+    left:50%;
+    transform: translateX(-50%);
+    min-width: 15%;
+    z-index:3;
+}
+.main-image {
+    position: relative;
+    max-width: 100%;
+    height: 70%;
+    
+}
+.slideshow-container {
+    
+    
+    img {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        z-index: -10;
+        
+        
+    }
+    picture {
+        opacity: 0;
+        transition: opacity 3s;
+        
+    }
+    picture.active {
+        opacity: 1;
+        transition: opacity 700ms;
+    }
+}
+.change-text {
+    h1 {
+        color: black;
+        font-size: 2rem;
+        line-height: 1.8rem;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+        letter-spacing: 1rem;
+        position: relative;
+        width: max-content;
+    }
+    a::after {
+        
+        content: "";
+        background-image: url(images/icon-arrow.svg);
+        width: 20%;
+        height: 50%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        right: 0;
+        bottom: 50%;
+        transform: translate(100%, 50%);
+    }
+
+}
+
+/* text blocks */
+.second-container, .change-text.text-active {
+    h2 {
+        color: black;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.7rem;
+    }
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+    padding: 3rem;
+
+  
+}
+
+
+/* BOTTOM */
+.button-image-container{
+    width: 100%;
+}
+.dark, .light {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+@media screen and (min-width:1171px) {
+    body {
+        font-size: 1rem;
+       
+    }
+   
+    
+    .top {
+        display: flex;
+        
+        
+    }
+    .buttons {
+        right: 0%;
+        transform: translateX(100%);
+    }
+    .main-image {
+        min-width: 60%;
+    }
+    .second-container, .change-text.text-active {
+       
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        
+        
+    
+    }
+    .block-first {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 1rem;
+        
+    }
+    .block {
+        
+            h1 {
+                font-size: 3rem;
+                line-height: 1;
+            }
+        
+        width: 50rem;
+        
+        
+    }
+    
+    .bottom {
+        display: flex;
+       
+    }
+    .bottom-image-container {
+        width: 55%;
+    }
+    .burger {
+        display: none;
+    }
+    .logo {
+        display: none;
+    }
+    .navbar{
+        .cross {
+            display: none;
+        }
+        
+        display: flex
+;
+        top: -2rem;
+        opacity: 1;
+        left: 10%;
+        position: absolute;
+        width: 50%;
+        transform: translateY(50%);
+        /* padding: 1rem; */
+        /* height: 5rem; */
+        justify-content: space-around;
+        align-items: center;
+        color: black;
+        
+    
+    
+    li {
+        list-style-type: none;
+        letter-spacing: 0.2rem;
+        color: white;
+        width: max-content;
+        position: relative;
+    }
+    }
+    ul::before {
+        pointer-events: none;
+        content: "";
+        width: 60%;
+        height: 60%;
+        background-image:url(images/logo.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        position: absolute;
+        left:-30%;
+        top: 0;
+        z-index:20;
+        transform: translateY(50%);
+    }
+    li:hover {
+        color: white;
+    }
+    li::before {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        right: 0;
+        width: 0%;
+        height: 2px;
+        background-color: rgb(255, 255, 255);
+        transition: width 0.5s;
+    }
+    li:hover::before {
+        width: 100%;
+    }
+    h1 {
+        font-size: 3rem;
+    }
+
+}
